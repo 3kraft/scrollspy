@@ -48,14 +48,15 @@ If you are giving it a try, make sure that you:
 
 2. The `options` is optional. It is type of `object` which contains properties below:
 
-| Name               | Type     | Default       | Description                                                                                                      |
-|--------------------|:---------|:--------------|:-----------------------------------------------------------------------------------------------------------------|
-| `sectionSelector`  | string   | `section`     | Query selector to your sections                                                                                  |
-| `targetSelector`   | string   | `a`           | Element will be added active class                                                                               |
-| `offset`           | number   | 0             | Offset number                                                                                                    |
-| `hrefAttribute`    | string   | `href`        | The menu item's attribute name which contains section ID                                                         |
-| `activeClass`      | string   | `active`      | Active class name will be added into `targetSelector`                                                            |
-| `onActive`         | function | null          | A callback method that's called with the current menuItem and section `onActive: function(menuItem, section) {}` |
+| Name               | Type     | Default       | Description                                                                                                                                           |
+|--------------------|:---------|:--------------|:------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `sectionType`      | string   | `section`     | Type of your sections. 'headline' means that your content is structured by headlines in a semantic way and not wrapped in a parent section element.   |
+| `sectionSelector`  | string   | `section`     | Query selector to your sections                                                                                                                       |
+| `targetSelector`   | string   | `a`           | Element will be added active class                                                                                                                    |
+| `offset`           | number   | 0             | Offset number                                                                                                                                         |
+| `hrefAttribute`    | string   | `href`        | The menu item's attribute name which contains section ID                                                                                              |
+| `activeClass`      | string   | `active`      | Active class name will be added into `targetSelector`                                                                                                 |
+| `onActive`         | function | null          | A callback method that's called with the current menuItem and section `onActive: function(menuItem, section) {}`                                      |
 
 ### ES6
 

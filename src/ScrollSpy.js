@@ -29,6 +29,7 @@ class ScrollSpy {
         this.menuList =
             menu instanceof HTMLElement ? menu : document.querySelector(menu);
         this.options = {
+            sectionType: options.sectionType || 'section', // section || headline
             sectionSelector: options.sectionSelector || 'section',
             targetSelector: options.targetSelector || 'a',
             offset: options.offset || 0,
@@ -68,7 +69,14 @@ class ScrollSpy {
              */
             const section = this.sections[i];
             const startAt = section.offsetTop;
-            const endAt = startAt + section.offsetHeight;
+            let endAt = startAt + section.offsetHeight;
+            if (this.options.sectionType === 'headline') {
+                const nextSectionIdx = i + 1;
+                endAt =
+                    nextSectionIdx < this.sections.length
+                        ? this.sections[nextSectionIdx].offsetTop
+                        : document.body.scrollHeight;
+            }
             const currentPosition =
                 (document.documentElement.scrollTop ||
                     document.body.scrollTop) + this.options.offset;
